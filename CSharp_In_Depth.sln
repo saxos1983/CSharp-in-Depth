@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter15_Async_Await", "Chapter15_Async_Await\Chapter15_Async_Await.csproj", "{893C6788-94E7-463B-B642-7CDA9B03FAA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter11_LINQ", "Chapter11_LINQ\Chapter11_LINQ.csproj", "{45529248-B62F-48E5-B5B6-B157C9D96278}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{893C6788-94E7-463B-B642-7CDA9B03FAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{893C6788-94E7-463B-B642-7CDA9B03FAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{893C6788-94E7-463B-B642-7CDA9B03FAA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45529248-B62F-48E5-B5B6-B157C9D96278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45529248-B62F-48E5-B5B6-B157C9D96278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45529248-B62F-48E5-B5B6-B157C9D96278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45529248-B62F-48E5-B5B6-B157C9D96278}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
