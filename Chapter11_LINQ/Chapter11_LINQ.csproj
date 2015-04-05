@@ -58,8 +58,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\DateTimeRange.cs" />
+    <Compile Include="Queries\GroupByAssignee.cs" />
     <Compile Include="Queries\GroupJoin.cs" />
     <Compile Include="Queries\GroupJoin2.cs" />
+    <Compile Include="Queries\GroupJoinAssignee.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Model\Model.cd" />
