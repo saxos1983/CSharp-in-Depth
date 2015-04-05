@@ -59,6 +59,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\DateTimeRange.cs" />
     <Compile Include="Queries\GroupByAssignee.cs" />
+    <Compile Include="Queries\GroupByContinuation.cs" />
     <Compile Include="Queries\GroupJoin.cs" />
     <Compile Include="Queries\GroupJoin2.cs" />
     <Compile Include="Queries\GroupJoinAssignee.cs" />
