@@ -33,6 +33,7 @@
             this.btnWaitDeadlock = new System.Windows.Forms.Button();
             this.btnAwaitNoDeadlock = new System.Windows.Forms.Button();
             this.btnConfigureAwaitNoDeadlock = new System.Windows.Forms.Button();
+            this.btnExecuteUpdateUIFromBackground = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblStatus
@@ -83,11 +84,22 @@
             this.btnConfigureAwaitNoDeadlock.UseVisualStyleBackColor = true;
             this.btnConfigureAwaitNoDeadlock.Click += new System.EventHandler(this.btnConfigureAwaitNoDeadlock_Click);
             // 
+            // btnExecuteUpdateUIFromBackground
+            // 
+            this.btnExecuteUpdateUIFromBackground.Location = new System.Drawing.Point(16, 133);
+            this.btnExecuteUpdateUIFromBackground.Name = "btnExecuteUpdateUIFromBackground";
+            this.btnExecuteUpdateUIFromBackground.Size = new System.Drawing.Size(256, 23);
+            this.btnExecuteUpdateUIFromBackground.TabIndex = 5;
+            this.btnExecuteUpdateUIFromBackground.Text = "Execute (Update UI from Background)";
+            this.btnExecuteUpdateUIFromBackground.UseVisualStyleBackColor = true;
+            this.btnExecuteUpdateUIFromBackground.Click += new System.EventHandler(this.btnExecuteUpdateUIFromBackground_Click);
+            // 
             // AsyncFormDeadLock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnExecuteUpdateUIFromBackground);
             this.Controls.Add(this.btnConfigureAwaitNoDeadlock);
             this.Controls.Add(this.btnAwaitNoDeadlock);
             this.Controls.Add(this.btnWaitDeadlock);
@@ -107,5 +119,6 @@
         private System.Windows.Forms.Button btnWaitDeadlock;
         private System.Windows.Forms.Button btnAwaitNoDeadlock;
         private System.Windows.Forms.Button btnConfigureAwaitNoDeadlock;
+        private System.Windows.Forms.Button btnExecuteUpdateUIFromBackground;
     }
 }

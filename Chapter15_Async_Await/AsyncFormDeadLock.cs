@@ -60,18 +60,45 @@ namespace Chapter15_Async_Await
             labelStatusValue.Text = task.Result;
         }
 
+        /// <summary>
+        /// This will cause an exception, because the task will run in the thread pool
+        /// and will then, after it finished, continue to update the element in the UI.
+        /// Because the update happens in the thread pool thread and not in the UI thread
+        /// an "InvalidOperationException: cross-thread operation not valid." will be thrown.
+        /// </summary>
+        private async void btnExecuteUpdateUIFromBackground_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                await this.CallLongRunningTaskAndUpdateUI();
+            }
+            catch (AggregateException ex)
+            {
+                labelStatusValue.Text = ex.InnerExceptions[0].Message;
+            }
+        }
+
         private async Task<string> DoLongRunningTask()
         {
             labelStatusValue.Text = "Executing...";
             await Task.Delay(TimeSpan.FromSeconds(3));
             return "Finished";
         }
-        
+
         private async Task<string> DoLongRunningTaskConfigureAwait()
         {
             labelStatusValue.Text = "Executing...";
             await Task.Delay(TimeSpan.FromSeconds(3)).ConfigureAwait(false);
             return "Finished";
+        }
+
+        private Task CallLongRunningTaskAndUpdateUI()
+        {
+            return Task.Run(() => this.DoLongRunningTask().ContinueWith(
+                t =>
+                    {
+                        this.labelStatusValue.Text = t.Result;
+                    }));
         }
 
         static void Main()
