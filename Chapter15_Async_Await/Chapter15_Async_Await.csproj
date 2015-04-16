@@ -55,6 +55,12 @@
     <Compile Include="AsyncForm.Designer.cs">
       <DependentUpon>AsyncForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AsyncFormDeadLock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsyncFormDeadLock.Designer.cs">
+      <DependentUpon>AsyncFormDeadLock.cs</DependentUpon>
+    </Compile>
     <Compile Include="AwaitingCancellation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +68,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AsyncForm.resx">
       <DependentUpon>AsyncForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsyncFormDeadLock.resx">
+      <DependentUpon>AsyncFormDeadLock.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
