@@ -40,6 +40,10 @@ namespace Chapter15_Async_Await
         /// <summary>
         /// Because the task is being awaited, the UI will remain responsive.
         /// </summary>
+        /// <remarks>
+        /// This changes the blocking behavior of the top-level methods so that 
+        /// the context is never actually blocked; all “waits” are “asynchronous waits”.
+        /// </remarks>
         private async void btnAwaitNoDeadlock_Click(object sender, EventArgs e)
         {
             var task = this.DoLongRunningTask();
@@ -53,6 +57,11 @@ namespace Chapter15_Async_Await
         /// back to the original context (which is the UI thread) due to the
         /// ConfigureAwait(false).
         /// </summary>
+        /// <remarks>
+        /// This changes the continuation behavior so that it does not resume on the context. 
+        /// Instead, the long running task will resume on a thread pool thread.
+        /// This enables task completion without having to re-enter the context.
+        /// </remarks>
         private void btnConfigureAwaitNoDeadlock_Click(object sender, EventArgs e)
         {
             var task = this.DoLongRunningTaskConfigureAwait();
@@ -96,9 +105,9 @@ namespace Chapter15_Async_Await
         {
             return Task.Run(() => this.DoLongRunningTask().ContinueWith(
                 t =>
-                    {
-                        this.labelStatusValue.Text = t.Result;
-                    }));
+                {
+                    this.labelStatusValue.Text = t.Result;
+                }));
         }
 
         static void Main()
