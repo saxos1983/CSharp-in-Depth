@@ -54,6 +54,8 @@
     <Compile Include="ParallelLinq\MandelbrotGenerator.cs" />
     <Compile Include="ParallelLinq\OrderedParallelRangeGenerator.cs" />
     <Compile Include="ParallelLinq\SingleThreadedGenerator.cs" />
+    <Compile Include="ParallelLinq\OrderedParallelPixelsGenerator.cs" />
+    <Compile Include="ParallelLinq\UnorderedParallelPixelsGenerator.cs" />
     <Compile Include="ParallelLinq\UnorderedParallelRangeGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

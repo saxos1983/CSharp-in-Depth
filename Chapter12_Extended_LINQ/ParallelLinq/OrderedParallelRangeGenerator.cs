@@ -1,9 +1,9 @@
-﻿namespace ParallelLinq
+﻿namespace Chapter12_Extended_LINQ.ParallelLinq
 {
     using System.ComponentModel;
     using System.Linq;
 
-    [Description("Ordered Parallel Generator")]
+    [Description("Ordered Parallel Range Generator")]
     public class OrderedParallelRangeGenerator : MandelbrotGenerator
     {
         public OrderedParallelRangeGenerator(ImageOptions options)
@@ -13,8 +13,8 @@
 
         protected override byte[] GeneratePixels()
         {
-            var query = from row in ParallelEnumerable.Range(0, Height).AsParallel()
-                        from col in ParallelEnumerable.Range(0, Width)
+            var query = from row in Enumerable.Range(0, this.Height).AsParallel().AsOrdered()
+                        from col in Enumerable.Range(0, this.Width)
                         select this.ComputeIndex(row, col);
             return query.ToArray();
         }

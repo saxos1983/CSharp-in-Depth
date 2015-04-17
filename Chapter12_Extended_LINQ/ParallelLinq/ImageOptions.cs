@@ -1,8 +1,8 @@
-﻿namespace ParallelLinq
+﻿namespace Chapter12_Extended_LINQ.ParallelLinq
 {
     public class ImageOptions
     {
-        public static readonly ImageOptions Default = new ImageOptions(2000, 1024, 3.2, 2.5, -2.1, -1.25);
+        public static readonly ImageOptions Default = new ImageOptions(4000, 1024, 3.2, 2.5, -2.1, -1.25);
 
         public int ImageHeight { get; private set; }
 

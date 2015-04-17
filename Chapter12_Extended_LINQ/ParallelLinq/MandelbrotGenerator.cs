@@ -1,10 +1,9 @@
-﻿namespace ParallelLinq
+﻿namespace Chapter12_Extended_LINQ.ParallelLinq
 {
     using System;
     using System.Diagnostics;
     using System.Drawing;
     using System.Drawing.Imaging;
-    using System.Threading;
     using System.Windows.Forms;
 
     public abstract class MandelbrotGenerator
@@ -57,7 +56,7 @@
                 fixed (byte* ptr = imageData)
                 {
                     IntPtr scan0 = new IntPtr(ptr);
-                    Bitmap bitmap = new Bitmap(Width, Height, Width, PixelFormat.Format8bppIndexed, scan0);
+                    Bitmap bitmap = new Bitmap(this.Width, this.Height, this.Width, PixelFormat.Format8bppIndexed, scan0);
                     ColorPalette palette = bitmap.Palette;
                     palette.Entries[0] = Color.White;
                     for (int i = 1; i < 256; i++)
@@ -72,13 +71,13 @@
 
         protected byte ComputeIndex(int row, int col)
         {
-            double x = (col * options.SampleWidth) / Width + options.OffsetX;
-            double y = (row * options.SampleHeight) / Height + options.OffsetY;
+            double x = (col * this.options.SampleWidth) / this.Width + this.options.OffsetX;
+            double y = (row * this.options.SampleHeight) / this.Height + this.options.OffsetY;
 
             double y0 = y;
             double x0 = x;
 
-            for (int i = 0; i < options.MaxIterations; i++)
+            for (int i = 0; i < this.options.MaxIterations; i++)
             {
                 if (x * x + y * y >= 4)
                 {

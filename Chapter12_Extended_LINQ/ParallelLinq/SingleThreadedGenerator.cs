@@ -1,4 +1,4 @@
-﻿namespace ParallelLinq
+﻿namespace Chapter12_Extended_LINQ.ParallelLinq
 {
     using System.ComponentModel;
     using System.Linq;
@@ -13,8 +13,8 @@
 
         protected override byte[] GeneratePixels()
         {
-            var query = from row in Enumerable.Range(0, Height)
-                        from column in Enumerable.Range(0, Width)
+            var query = from row in Enumerable.Range(0, this.Height)
+                        from column in Enumerable.Range(0, this.Width)
                         select this.ComputeIndex(row, column);
 
             // The same but in extension method form (which is not very easy to read here)
